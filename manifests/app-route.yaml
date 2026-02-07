@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: app-service-route
+  namespace: shankar-prakriya-dev
+spec:
+  to:
+    kind: Service
+    name: app-service
+  port:
+    targetPort: 80
+  tls:
+    termination: edge
